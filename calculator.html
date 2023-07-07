@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="calculate.js" defer></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <p class="logo">AimFidz</p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="myprofile.html">My Profile</a></li>
+            </ul>
+            <a href="https://perlis.uitm.edu.my/" class="btn">UiTM Arau</a>
+        </nav>
+    </div>  
+
+    <div class="body">
+    <div class="container">
+        <div class="title">Discount Calculator</div>
+        <div class="content">
+            <form id="discountForm">
+                <div class="input-box">
+                    <label for="productID">Product</label>
+                    <select id="productID" name="productID" required>
+                        <option value="" disabled selected>Select the product</option>
+                        <option value="1">Vans Old Skool</option>
+                        <option value="2">Sprayground</option>
+                        <option value="3">Basic Tee</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="originalPrice">Original Price</label>
+                    <input type="number" id="originalPrice" placeholder="Price of items" disabled>
+                </div>
+                <div class="input-box">
+                    <label for="discountPercentage">Discount Percentage</label>
+                    <input type="number" id="discountPercentage" placeholder="e.g. 1% - 90%" title="Every year there will be a discount of up to 90%. So you can check the price of the item with the percentage you want to follow your budget." required>
+                </div>
+                <div class="input-box">
+                    <label for="membershipNumber">Membership</label>
+                    <select id="membershipNumber" onchange="handleMembershipNumberChange(this.value)">
+                        <option value="0" disabled selected>Do you have membership card</option>
+                        <option value="">none</option>
+                        <option value="7777">have</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" placeholder="e.g. 2 unit" title="The amount of items you want whether buying them for family and loved ones." required>
+                </div>
+                <div class="input-box">
+                    <label for="taxRate">Tax Rate
+                        <span tabindex="0" class="pgicon pgicon-info-o" data-toggle="popover" data-content="The amount of loan required to purchase the property after downpayment, or the actual property price. Typically up to 90% for first-time homeowners, if 10% downpayment is put down." data-placement="bottom"></span>
+                    </label>
+                    <input type="number" id="taxRate" placeholder="e.g. 6 %" title="Every item in this store will involve GST of 6% to 12%." required>
+                </div>
+                <div class="input-box">
+                    <label for="couponCode">Shipping Voucher</label>
+                    <select id="couponCode" onchange="handleCouponCodeChange(this.value)">
+                        <option value="0" disabled selected>Select options</option>
+                        <option value="">none</option>
+                        <option value="CODE">have</option>
+                    </select>
+                </div>                
+                <div class="input-box">
+                    <label for="shippingCost">Shipping Cost</label>
+                    <input type="number" id="shippingCost" placeholder="e.g. RM 5.00" title="Shipping to all of Malaysia according to the price of RM 5 up to RM 15." required>
+                </div>
+                <div class="bton">
+                    <button type="submit">Calculate</button>
+                    <button id="clearButton">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="answer">
+        <img src="picture/product.png">
+        <div id="output"></div>
+        <div id="error"></div>
+    </div>   
+    </div>
+    
+
+    <div class="footer">
+        <div class="copyright">
+            <p>2023 &copy; AimFidz. <i>All rights reserved.</i></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

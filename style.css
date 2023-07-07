@@ -1,0 +1,403 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 5rem;
+	font-size: 4rem;
+    color: #1B2747;
+}
+
+/*Style for each pages*/
+a {
+    text-decoration: none;
+}
+
+/*Styling header*/
+.header {
+    height: 100px;
+    width: 100vw;
+    background: #1B2747;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo::first-letter {
+    font-size: 40px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    position: relative;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: #4364a2;
+}
+
+nav ul li a::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #4364a2;
+    transition: .3s;
+}
+
+.btn {
+    color: #fff;
+    font-size: 16px;
+    background: #4364a2;
+    padding: 10px 30px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all .4s ease-in-out;
+    border: 2px solid #4364a2;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #4364a2;
+}
+
+/*Style for page home.html*/
+/* Product Section */
+.all-products{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.product{
+	overflow: hidden;
+	background: #ffffff;
+	color: #21201e;
+	text-align: center;
+	width: 240px;
+	height: 400px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1.2rem;
+	margin: 2rem;
+}
+
+.product .product-title, .product .product-price{
+	font-size: 18px;
+}
+
+.product:hover img{
+	scale:  1.1;
+}
+
+.product:hover {
+	box-shadow: 5px 15px 25px #eeeeee;
+}
+
+.product img {
+	height: 200px;
+	margin: 1rem;
+	transition: all 0.3s;
+}
+
+.product a:link, .product a:visited{
+	color: #ececec;
+	display: inline-block;
+	text-decoration: none;
+	background-color: #2c3e50;
+	padding: 1.2rem 3rem;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+
+.product a:hover{
+	transform: scale(1.1);
+}
+/*Section Product end*/
+
+.banner-container   {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-container .banner   {
+    background: #1B2747;
+    border-radius: 5px;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 5px 10px #0005;
+    overflow: hidden;
+}
+
+.banner-container .banner .card {
+    flex:1 1 250px;
+    padding:15px;
+    text-align: center;
+}
+
+.banner-container .banner .card img {
+    width:70%;
+}
+
+.banner-container .banner .content  {
+    flex:1 1 250px;
+    text-align: center;
+    padding:10px;
+    text-transform: uppercase;
+}
+
+.banner-container .banner .content span {
+    color:#eee;
+    font-size: 25px;
+}
+
+.banner-container .banner .content h3   {
+    color:#fff;
+    font-size: 40px;
+}
+
+.banner-container .banner .content p    {
+    color:#eee;
+    font-size: 20px;
+    padding:10px 0;
+}
+
+.banner-container .banner .person    {
+    position: relative;
+    bottom: -33px;
+    padding:10px;
+    flex:1 1 250px;
+}
+
+.banner-container .banner .person img    {
+    width:100%;
+}
+
+/*Style for page myprofile.html*/
+/*Styling profile picture, name, student id and group*/
+.detail{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+  }
+.detail h1 {
+    color: #1B2747;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 70px;
+}
+.detail span {
+    color: #4364a2;
+  }
+.detail p {
+    color: #1B2747;
+    padding: 5px;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.image {
+    width: 650px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+/*Style for page index.html*/
+/*Styling discount calculator*/
+.body {
+    height: 85vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background: solid #ccc;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container .title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: solid #1B2747;
+}
+
+.container .content form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 10px);
+}
+
+form .input-box label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.input-box select,
+.input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+form .bton {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+form .bton button {
+    display: inline-block;
+    margin: 5px 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background: #141E30;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+form .bton button:hover {
+    color: #1B2747;
+    background: transparent;
+}
+
+.answer {
+    /*display: inline-flex;*/
+    float: right;
+    max-width: 700px;
+    width: 50%;
+    background-color: #1B2747;
+    padding: 30px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.answer img {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.answer [id] {
+    color: #fff;
+    text-align: justify;
+    font-size: 16px;
+}
+
+@media(max-width: 584px) {
+    
+    .banner-container .banner .person {
+        display: none;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+
+    form .input-box label {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .content form .input-box {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .input-box::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+
+/*Styling footer*/
+.footer {
+    height: 50px;
+    width: 100vw;
+    background: #1B2747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.copyright {
+    color: #fff;
+}
