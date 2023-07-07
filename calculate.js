@@ -63,7 +63,7 @@ document.getElementById('discountForm').addEventListener('submit', function(even
         }
 
         // Check for quantity limitation
-        if (quantity < 0) {
+        if (quantity < 1) {
             displayErrorMessage('Quantity cannot be negative.');
             return;
         }
