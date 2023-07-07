@@ -10,25 +10,7 @@ document.getElementById('discountForm').addEventListener('submit', function(even
     var couponCode = document.getElementById('couponCode').value;
     var shippingCost = parseFloat(document.getElementById('shippingCost').value);
 
-    // Check for discount percentage limitation
-    if (discountPercentage > 90) {
-        displayErrorMessage('Discount percentage cannot exceed 99%.');
-        return;
-    }
 
-    // Check for tax rate limitation
-    if (taxRate < 6 || taxRate > 12) {
-        displayErrorMessage('Tax rate must be between 6% and 12%.');
-        return;
-    }
-
-    // Check for shipping cost limitation
-    if (shippingCost < 5 || shippingCost > 15) {
-        if (couponCode !== 'CODE' || shippingCost !== 0) {
-            displayErrorMessage('Shipping cost must be from range RM 5 to RM 15.');
-            return;
-        }
-    }
 
     // Perform calculation
     var discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
@@ -54,6 +36,37 @@ document.getElementById('discountForm').addEventListener('submit', function(even
             displayErrorMessage('Please enter a valid shipping cost or select a shipping voucher.');
             return;
         }
+        // Check for discount percentage limitation
+        if (discountPercentage > 90) {
+            displayErrorMessage('Discount percentage cannot exceed 90%.');
+            return;
+        }
+
+        // Check for tax rate limitation
+        if (taxRate < 6 || taxRate > 12) {
+            displayErrorMessage('Tax rate must be between 6% and 12%.');
+            return;
+        }
+
+        // Check for shipping cost limitation
+        if (shippingCost < 5 || shippingCost > 15) {
+            if (couponCode !== 'CODE' || shippingCost !== 0) {
+                displayErrorMessage('Shipping cost must be from range RM 5 to RM 15.');
+                return;
+            }
+        }
+
+        // Check for discount percentage limitation
+        if (discountPercentage < 0 || discountPercentage > 90) {
+            displayErrorMessage('Discount percentage must be between 0 and 90.');
+            return;
+        }
+
+        // Check for quantity limitation
+        if (quantity < 0) {
+            displayErrorMessage('Quantity cannot be negative.');
+            return;
+        }
 
         var totalPrice = discountedPrice * quantity;
         var totalTax = totalPrice * (taxRate / 100);
@@ -76,19 +89,29 @@ document.getElementById('discountForm').addEventListener('submit', function(even
                 productName = 'Unknown';
         }
         
-        var discountFormula = 'Discount Amount = Original Price * (Discount Percentage / 100)';
-        var membershipDiscountFormula = 'Membership Discount Amount = Discounted Price * (5 / 100)';
-        var totalPriceFormula = 'Total Price = Final Price with Membership Discount * Quantity';
-        var taxAmountFormula = 'Tax Amount = Total Price * (Tax Rate / 100)';
-        var finalPriceFormula = 'Final Price = Total Price + Tax Amount + Shipping Cost';
+        var totalDiscount = originalPrice - discountedPrice;
+        var membershipDiscountValue = 0;
+        //var membershipDiscountValue = discountedPrice * (0.05);
+        var shippingCostValue = shippingCost;
+        var quantityValue = quantity;
+        //var discountFormula = 'Discount Amount = Original Price * (Discount Percentage / 100)';
+        //var membershipDiscountFormula = 'Membership Discount Amount = Discounted Price * (5 / 100)';
+        //var totalPriceFormula = 'Total Price = Final Price with Membership Discount * Quantity';
+        //var taxAmountFormula = 'Tax Amount = Total Price * (Tax Rate / 100)';
+        //var finalPriceFormula = 'Final Price = Total Price + Tax Amount + Shipping Cost';
 
         var outputElement = document.getElementById('output');
-        outputElement.innerHTML = discountFormula + '<br>'
-            +  membershipDiscountFormula + '<br>'
-            +  totalPriceFormula + '<br>'
-            +  taxAmountFormula + '<br>'
-            +  finalPriceFormula + '<br><br>'
-            + 'Final Price: RM ' + finalPrice.toFixed(2);
+        outputElement.innerHTML = 'Product Name: ' + productName + '<br>'
+        + 'Total Discount: RM ' + totalDiscount.toFixed(2) + '<br>'
+        + 'Quantity: ' + quantityValue + ' units' + '<br>'
+        + 'Shipping Cost: RM ' + shippingCostValue.toFixed(2) + '<br><br>'
+        + 'Final Price: RM ' + finalPrice.toFixed(2);
+            //discountFormula + '<br>'
+            //+  membershipDiscountFormula + '<br>'
+            //+  totalPriceFormula + '<br>'
+           // +  taxAmountFormula + '<br>'
+           // +  finalPriceFormula + '<br><br>'
+           // + 'Final Price: RM ' + finalPrice.toFixed(2);
     }
 });
 
