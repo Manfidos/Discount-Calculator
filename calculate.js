@@ -104,6 +104,7 @@ document.getElementById('discountForm').addEventListener('submit', function(even
         outputElement.innerHTML = 'Product Name: ' + productName + '<br>'
         + 'Total Discount: RM ' + totalDiscount.toFixed(2) + '<br>'
         + 'Quantity: ' + quantityValue + ' units' + '<br>'
+        + 'Total Tax: RM ' + totalTax + '<br>'
         + 'Shipping Cost: RM ' + shippingCostValue.toFixed(2) + '<br><br>'
         + 'Final Price: RM ' + finalPrice.toFixed(2);
             //discountFormula + '<br>'
