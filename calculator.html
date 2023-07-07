@@ -45,10 +45,10 @@
                 </div>
                 <div class="input-box">
                     <label for="membershipNumber">Membership</label>
-                    <select id="membershipNumber" onchange="handleMembershipNumberChange(this.value)">
-                        <option value="0" disabled selected>Do you have membership card</option>
-                        <option value="">none</option>
-                        <option value="7777">have</option>
+                    <select id="membershipNumber" onchange="handleMembershipNumberChange(this.value)" required>
+                        <option value="" disabled selected>Do you have membership card</option>
+                        <option value="">No</option>
+                        <option value="7777">Yes</option>
                     </select>
                 </div>
                 <div class="input-box">
@@ -63,8 +63,8 @@
                 </div>
                 <div class="input-box">
                     <label for="couponCode">Shipping Voucher</label>
-                    <select id="couponCode" onchange="handleCouponCodeChange(this.value)">
-                        <option value="0" disabled selected>Select options</option>
+                    <select id="couponCode" onchange="handleCouponCodeChange(this.value)" required>
+                        <option value="" disabled selected>Select options</option>
                         <option value="">none</option>
                         <option value="CODE">have</option>
                     </select>
